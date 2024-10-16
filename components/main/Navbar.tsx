@@ -1,8 +1,24 @@
-"use client";
-import React from 'react';
+"use client"; // Ensure this component is rendered on the client side
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Check if the checkbox is checked using the useEffect
+  useEffect(() => {
+    const menuToggle = document.getElementById('menu-toggle') as HTMLInputElement; // Cast to HTMLInputElement
+    if (menuToggle) {
+      const handleChange = () => {
+        setIsMenuOpen(menuToggle.checked);
+      };
+      menuToggle.addEventListener('change', handleChange);
+      return () => {
+        menuToggle.removeEventListener('change', handleChange);
+      };
+    }
+  }, []);
+
   return (
     <nav className="w-full h-[65px] fixed top-0 bg-gradient-to-b from-purple-800 to-black text-white shadow-md z-50 px-4 md:px-10 flex items-center justify-between">
       <div className="flex items-center">
@@ -12,36 +28,24 @@ const Navbar = () => {
       </div>
 
       <input type="checkbox" id="menu-toggle" className="hidden" />
-      <label htmlFor="menu-toggle" className="block md:hidden cursor-pointer text-white text-2xl">
-        <span className={`hamburger-icon transition duration-300 ${document.getElementById('menu-toggle')? 'hidden' : 'block'}`}>☰</span>
-        <span className={`cross-icon transition duration-300 ${document.getElementById('menu-toggle')? 'block' : 'hidden'}`}>✖</span>
+      <label 
+        htmlFor="menu-toggle" 
+        className="block md:hidden cursor-pointer text-white text-2xl"
+        onClick={() => setIsMenuOpen(!isMenuOpen)} // Update state when clicked
+      >
+        <span className={`hamburger-icon transition duration-300 ${isMenuOpen ? 'hidden' : 'block'}`}>☰</span>
+        <span className={`cross-icon transition duration-300 ${isMenuOpen ? 'block' : 'hidden'}`}>✖</span>
       </label>
 
       <div
-        className={`absolute top-[65px] left-0 w-full bg-transparent text-white md:static md:flex md:items-center md:w-auto md:bg-transparent transition-transform duration-300 ease-in-out transform ${ 
-          'translate-x-full' /* Hide by default */
-        } ${ 
-          'menu-open' /* Show when menu is open */
-        }`}
+        className={`absolute top-[65px] left-0 w-full bg-transparent text-white md:static md:flex md:items-center md:w-auto md:bg-transparent transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0 p-4 md:p-0 justify-center items-center">
           <Link href="/" className="menu-item">About Me</Link>
           <Link href="/#skills" className="menu-item">Skills</Link>
           <div className="relative group">
             <Link href="/projects" className="menu-item">Projects</Link>
-            {/* <ul className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <li>
-                <Link href="https://precious-llama-151610.netlify.app/" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Portfolio</Link>
-              </li>
-              <li>
-                <Link href="/project2" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">E-commerce</Link>
-              </li>
-              <li>
-                <Link href="/project3" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Project 3</Link>
-              </li>
-            </ul> */}
           </div>
-          {/* <Link href="/#contact" className="menu-item">Contact</Link> */}
           <a
             href="../../utils/Tushar_1.5_years_Software_Developer.pdf"
             download
