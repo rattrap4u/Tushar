@@ -41,7 +41,7 @@ const Navbar = () => {
               </li>
             </ul> */}
           </div>
-          <Link href="/#contact" className="menu-item">Contact</Link>
+          {/* <Link href="/#contact" className="menu-item">Contact</Link> */}
           <a
             href="../../utils/Tushar_1.5_years_Software_Developer.pdf"
             download

@@ -7,7 +7,7 @@ import { slideInFromLeft, slideInFromRight, slideInFromTop } from '@/utils/motio
 
 const SkillText = () => {
   return (
-    <div className='w-full h-auto flex flex-col items-center justify-center'>
+    <div className='w-full h-auto flex flex-col items-center justify-center md:mt-12 mb-5'>
         <motion.div
           variants={slideInFromLeft(0.5)}
           className="flex flex-col gap-6 mt-6 text-5xl font-bold text-white max-w-[600px] w-auto h-auto"

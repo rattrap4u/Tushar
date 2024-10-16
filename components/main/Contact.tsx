@@ -81,11 +81,10 @@ const ContactUs = () => {
                 },
                 body: JSON.stringify(formData),
             });
-
+    
             if (response.ok) {
                 alert('Message sent successfully!');
-                setFormData({ name: '', contactNumber: '', email: '', message: '' }); // Reset form
-                setErrors({}); // Clear errors
+                // Reset form...
             } else {
                 alert('Failed to send message.');
             }

@@ -4,22 +4,22 @@ import ProjectCard from '../sub/ProjectCard';
 
 const projects = [
   {
-    src: '/Portfolio.jpeg',
+    src: '/port-1.png',
     title: 'React.js Portfolio',
     link: 'https://precious-llama-151610.netlify.app/',
     description: 'Previous Portfolio (1st version) website built using Reactjs, CSS and deployed on netlify with integrated email service facilitated by EmailJS.'
   },
   {
-    src: '/SpaceWebsite.png',
+    src: '/spaceweb.png',
     title: 'Modern Next.js Portfolio',
     link: 'https://precious-llama-151610.netlify.app/',
     description: 'Modern Portfolio website built using NextJs, Framer Motion, Tailwind CSS.'
   },
   {
-    src: '/CardImage.png',
+    src: '/sms.png',
     title: 'Student Management System',
     link: 'https://precious-llama-151610.netlify.app/',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor, commodi blanditiis, laborum veniam soluta numquam temporibus eius assumenda perferendis ratione inventore accusamus delectus voluptates necessitatibus eaque.'
+    description: '.'
   },
   
 ];
