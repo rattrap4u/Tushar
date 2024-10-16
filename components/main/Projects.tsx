@@ -19,7 +19,13 @@ const projects = [
     src: '/sms.png',
     title: 'Student Management System',
     link: 'https://precious-llama-151610.netlify.app/',
-    description: '.'
+    description: 'Student Management System using Java, SpringBoot, MySQL, Git, and ReactJS.'
+  },
+  {
+    src: '/under.jpg',
+    title: 'E-commerce Website',
+    link: '',
+    description: 'E-Commerce Website using NextJs, TypeScript, React, Clerk, Shadcn, NodeJs, TailwindCSS.'
   },
   
 ];
