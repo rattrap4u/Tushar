@@ -32,6 +32,7 @@ const SkillDataProvider = ({ src, width, height, index} : Props) => {
     animate={inView ? 'visible' : 'hidden'}
     custom={index}
     transition={{delay: index * animationDelay}}
+
     >
         <Image
         src={src}

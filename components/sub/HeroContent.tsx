@@ -1,14 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   slideInFromLeft,
   slideInFromRight,
   slideInFromTop,
 } from "@/utils/motion";
-import { SparklesIcon } from "@heroicons/react/24/solid";
+// import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+
+
+
 
 const HeroContent = () => {
   return (
@@ -18,7 +21,7 @@ const HeroContent = () => {
       className="flex flex-row items-center justify-center px-10 mt-20 w-full z-[20]"
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
-        <motion.div
+        {/* <motion.div
           variants={slideInFromTop}
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
         >
@@ -26,19 +29,21 @@ const HeroContent = () => {
           <h1 className="Welcome-text text-[13px]">
             Fullstack Developer Portfolio
           </h1>
-        </motion.div>
+        </motion.div> */}
+
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-6 mt-6 text-5xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
-            Providing
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+            {/* Providing */}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-cyan-500 hover:from-red-600 hover:to-indigo-700">
+
               {" "}
-              the best{" "}
+              TUSHAR KUMAR PATEL{" "}
             </span>
-            project exprience
+            {/* project exprience */}
           </span>
         </motion.div>
 
@@ -47,14 +52,9 @@ const HeroContent = () => {
           className="text-lg text-gray-400 my-5 max-w-[600px]"
         >
           I&apos;m a Full Stack Software Engineer with experience in Website,
-          and Software development. Check out my projects and skills.
+          Software and DevOps Technologies. Check out my projects and skills.
         </motion.p>
-        <motion.a
-          variants={slideInFromLeft(1)}
-          className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-        >
-          Learn More!
-        </motion.a>
+        
       </div>
 
       <motion.div
@@ -66,6 +66,7 @@ const HeroContent = () => {
           alt="work icons"
           height={550}
           width={550}
+          className="hidden md:block"
         />
       </motion.div>
     </motion.div>
